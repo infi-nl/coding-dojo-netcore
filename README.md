@@ -205,7 +205,53 @@ In addition, you could check out the properties of projects, most notably the AP
 
 ### Step 03 - Managing NuGet Packages
 
-TODO
+For the last time, we remain at the same starting point.
+For a fresh status, reset your working copy and check out `step-03-start`.
+
+Let's talk about .NET's package manager: NuGet.
+Should you measure package managers in "How Much Pain They Cause", this one's at least a lot better than NPM :-D.
+Nah, just kidding, we love NPM too.
+
+Under the hood, NuGet is basically a CLI tool.
+However, the `dotnet` CLI as well as the IDEs we use in this Dojo all wrap NuGet in one way or another.
+Each IDE does so slightly differently, but they should all be fairly self-explanatory in function.
+
+We will be **adding packages to the `InfiCoreDojo.Api` project**, let's start with something simple:
+
+- [Serilog.AspNetCore](https://www.nuget.org/packages/Serilog.AspNetCore)
+- [Serilog.Sinks.Console](https://www.nuget.org/packages/Serilog.Sinks.Console)
+
+Look for your IDE's way to manage NuGet packages and add those two to the Api project.
+These packages allow us to do structured logging.
+Each "Destination" a.k.a. "Sink" has its own package.
+For production we could add all sorts of Sinks (files, Elastic, online services, etc), but we'll keep it simple for now.
+
+Follow [the base Serilog instructions](https://github.com/serilog/serilog-aspnetcore#instructions) to change `Program.cs` (just the first two code blocks).
+Optionally remove the logging settings from `appsettings.json`.
+
+Before we can test this we need to add some logging.
+We'll use the global static logger for now, like this:
+
+```csharp
+Log.Logger.Information("My string with {PlaceHolders} in it", SomePlaceholderValue);
+```
+
+Let's add this to the `PlayerController`:
+
+1. Log info: `"Asking for player {Name}"` in `Get(...)`
+1. Log info: `"Retrieving current level for player {Name}"` in `GetCurrentLevel(...)`
+1. Log info: `"Making player choice {@Choice}"` in `Choose(...)` (the `@` symbol logs the variable as inline json, basically you tell Serilog it's a Plain-Old-Csharp-Object, Poco)
+1. Log a warning: `"Executing reset command {@Reset}"` in `Restart(...)` even though it's still empty
+
+Now run the application again, and verify that API calls are being written to your console.
+You might need to look around in your IDE for an "Output" window, possibly with an ASP.NET Web sub-window or dropdown.
+This might be a bit tough to find, Google and Dojo-colleagues are your friends!
+
+Congratulations, you've edited some code!
+
+**Recommended bonus**: check out the diff for your code, specifically the `.csproj` file changes.
+Try to add [Serilog.Sinks.File](https://github.com/serilog/serilog-sinks-file) but by manually editing that `.csproj` file.
+Change your `Program.cs` in a way that both the `File` and `Console` sink are in use.
 
 ### Step 04 - Changing the Controller
 
