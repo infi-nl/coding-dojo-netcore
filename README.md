@@ -274,7 +274,66 @@ PS. This touches on some pretty tough and ugly Mocking issues, so feel free to s
 
 ### Step 05 - Dependency Injection
 
-TODO
+Start this step from tag `step-05-start` or where you left off with step 4.
+
+ASP.NET Core has - for better or for worse - embraced Dependency Injection (DI) to a point where it's a built in part of the framework.
+Although there's still a case to be made for specific Dependency Injection tools ("containers"), in this Dojo we will stick to the built in features.
+
+There's no room or time here for an extended explanation (Google's your friend! We are also your friend!), so we'll stick to a short version here.
+Note that it's slightly opinionated, and moderately .NET Core specific.
+
+Basically you want your classes to ask for all the types it depends on to function correctly.
+So as a rule of thumb, these are a 'forbidden':
+
+- Using `new` to create instances of complex (services and such) and/or foreign (i.e. from other namespaces/projects) types
+- Using globally available objects (i.e. `static` types)
+
+Instead, your classes should ask for these "dependencies" in the constructor.
+Preferably you ask for them via an abstraction, typically an `interface`.
+The DI framework ("Container") will then provide specific implementations at it well pleases.
+For one, this allows you to swap out one implementation for the other, without changing the dependent class.
+
+Okay, enough theory.
+Let's have some action!
+
+Currently, we have violated the above rule of thumb.
+Both controllers use `new` to create foreign types: their DataAccess Layer dependencies.
+Let's fix this, starting with the `LevelController`.
+
+Remove the `= null` default for the constructor argument. The DI framework will now _always_ have to supply something.
+Instead of `new`ing an `InMemoryLevelDal` in the constructor, throw an exception:
+
+```csharp
+public LevelController(ILevelDal levelDal)
+{
+    this.levelDal = levelDal ?? throw new ArgumentNullException(nameof(levelDal));
+}
+```
+
+Repeat the same changes for the `PlayerController`.
+Then fire up the application and try to do stuff.
+You should see Serilog output something along these lines:
+
+> System.InvalidOperationException: Unable to resolve service for type 'InfiCoreDojo.DataAccess.IPlayerDal' while attempting to activate 'InfiCoreDojo.Api.Controllers.PlayerController'.
+
+In short: the DI framework doesn't know how to provide an `IPlayerDal`.
+Makes sense, because we haven't told it how to do so.
+Let's fix this!
+Open up `Startup.cs` and at the bottom of `ConfigureServices(...)` add:
+
+```csharp
+services.AddScoped<ILevelDal, InMemoryLevelDal>();
+services.AddScoped<IPlayerDal, InMemoryPlayerDal>();
+```
+
+This tells the DI framework to supply an `InMemory...Dal` whenever some class constructor asks for the interface type.
+Fire up the application again and verify that things are working again.
+
+Congratulations, you're now using Dependency Injection!
+
+**Recommended bonus**: the `InMemoryDatabase` can be registered with `services.AddSingleton...` with the dependency injection container.
+The `...Dal` classes can then ask for it in the constructor.
+Surely you have enough info now to do this task?
 
 ### Step 06 - Unit Tests
 
