@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.8" />
+    <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="2.0.3" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="2.4.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.2" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\InfiCoreDojo.DataAccess\InfiCoreDojo.DataAccess.csproj" />
+    <ProjectReference Include="..\InfiCoreDojo.Domain\InfiCoreDojo.Domain.csproj" />
+  </ItemGroup>
+</Project>

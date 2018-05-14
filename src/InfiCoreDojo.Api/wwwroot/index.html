@@ -1,0 +1,52 @@
+﻿<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="./css/style.css" />
+    </head>
+    <body>
+
+        <!-- This is purely for the Dojo, so it's "in your face" when running the app for the first time: -->
+        <a href="/swagger" style="display: inline-block; opacity: 0.8; position: fixed; top: 5px; right: 5px; text-decoration: none; padding: 10px; color: firebrick; border: 1px solid firebrick; background: darksalmon; box-shadow: 4px 4px 8px #aaa; border-radius: 2px;">SWAGGER...</a>
+
+        <div id="controls">
+            <span id="restart" class="btn">Restart!</span>
+            <span id="playerControls">
+                <span id="playerName">not logged in</span>
+                <span id="logOut" class="btn">log out</span>
+            </span>
+        </div>
+
+        <hr />
+
+        <div id="intro">
+            <h2>Welcome</h2>
+            <div>Welcome to Curie, the Interactive Story App! Before we start, we like to know who you are. Please introduce yourself and click next.</div>
+            <p>
+                <!-- Prefill a name for development convenience. -->
+                <input type="text" id="introName" value="john" />
+                <span class="btn" id="introNext">Start ➠</span>
+            </p>
+        </div>
+
+        <div id="level" style="display: none;">
+            <div id="levelWaiting" style="display: none;">(waiting)</div>
+
+            <div id="levelDetails">
+                <h2 id="levelName">De woonkamer</h2>
+                <p id="levelDescription">…loopt op je af. Lorem ipsum dolar sit amet, consectetur</p>
+                <div id="answers">
+                    <ol>
+                        <li data-answer-id="">Je rent gillend weg</li>
+                        <li data-answer-id="">Je geeft hem een mep met je handtas</li>
+                        <li data-answer-id="">Je pakt je pipa</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="./js/dal.js"></script>
+        <script type="text/javascript" src="./js/view.js"></script>
+        <script type="text/javascript" src="./js/main.js"></script>
+    </body>
+</html>

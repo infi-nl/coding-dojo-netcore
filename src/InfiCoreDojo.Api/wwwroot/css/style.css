@@ -1,0 +1,53 @@
+* { 
+    box-sizing: border-box;
+}
+
+html {
+    background: #faf0fa;
+}
+
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 16px;
+    line-height: 20px;
+    background: #fcfcfc;
+    color: indigo;
+    border: 1px solid #999;
+    border-radius: 4px;
+    box-shadow: 2px 2px 4px #aaa;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 10px;
+}
+
+input {
+    padding: 4px 8px;
+    color: #555;
+    border: 1px solid #aaa;
+    font-size: 16px;
+    color: #111;
+}
+
+.btn {
+    cursor: pointer;
+    padding: 5px;
+    background: #fbf5fb;
+}
+
+.btn:hover {
+    background: #faf0fa;
+}
+
+#playerControls {
+    display: none;
+    float: right;
+}
+
+#answers li {
+    cursor: pointer;
+    padding: 10px;
+}
+
+#answers li:hover {
+    background: #faf0fa;
+}
