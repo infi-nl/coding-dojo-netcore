@@ -139,7 +139,32 @@ See what the CLI generated for you.
 
 ### Step 01 - Running the Dojo Code
 
-TODO
+We're ready to dive in. Start with these steps:
+
+1. Clone this repository (or your own fork, if you like);
+1. Check out the `step-01-start` tag;
+
+From here on out there are two ways to follow the Dojo.
+You can mix and match approaches, which you take is a matter of preference.
+You can either:
+
+1. Do work on detached heads (the tag commit), discard after each step, and start the next step fresh from the repo's code.
+1. Start with `git checkout -b my-dojo-attempt` or some such, and commit your own results as you go.
+
+In any case, now that you're set up, open up the `InfiCoreDojo.sln` (VS2017, Jetbrains), or the root folder itself (VSCode).
+Note that you might need to mark the `InfiCoreDojo.Api` as the Startup Project in your IDE.
+Try to "Build" the solution, and then "Debug" or "Start with Debugger" option.
+Typically this is either the F5 key or some main menu option.
+
+Open `http://localhost:5000` if it hasn't opened automatically, and you should see the application's welcome screen.
+It's a light-purle site with "WELCOME" in big friendly letters.
+
+Congratulations, you're up and running!
+
+**Recommended bonus**: check out the application's current state, click through the GUI, check out the app.
+Also, check out **the "SWAGGER" button top left** and give the API endpoints a go.
+Finally, find `PlayerController.cs` and place a debugger breakpoint at the first line of the `Choose(...)` method.
+Click a bit in the App and see that your IDE hits the break point.
 
 ### Step 02 - Codebase Layout
 
