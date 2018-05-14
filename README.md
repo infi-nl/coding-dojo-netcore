@@ -79,7 +79,63 @@ Although it should theoretically work, it's untested.
 
 ### Step 00 - Exploring the dotnet CLI
 
-TODO
+Before, there was ".NET", a.k.a. "The 'Full' .NET Framework".
+This was a Windows-only runtime for .NET applications.
+There was also an API-compatible clone called Mono allowing you to build the same code to make it run on other platforms (Linux, or iOS/Android via Xamarin).
+
+Now there are _two_ new things:
+
+- **.NET Standard (2.x currently)**: an "API specification" for .NET runtimes, similar to the Android API "Level";
+- **.NET Core (2.x currently)**: an implementation of .NET Standard, available builds cross-platform, and sources available under the MIT license;
+
+To _create_ .NET Core applications, you need to download the SDK.
+Check the Prerequisites above for instructions, you should be able to run this from your favorite terminal:
+
+```bash
+dotnet --version
+# Example output: 2.1.200
+
+dotnet --help
+# Shows CLI commands
+```
+
+Confirm this is working properly before continuing.
+
+Before we move to the code from this guide, let's first try our setup.
+Create a clean, empty folder, go there with your terminal, and execute:
+
+```bash
+dotnet new --help
+```
+
+This shows a lot of stuff, and at the bottom it shows all the pre-installed project templates.
+Let's skip the boring old Console Application, and dive straight into things:
+
+```bash
+# Execute in your fresh "test" folder:
+dotnet new webapi
+```
+
+Follow this by:
+
+```bash
+dotnet run
+# Outputs "Now listening on: http://localhost:5000" or similar
+```
+
+The root of that address will be empty.
+But on [http://localhost:5000/api/values](http://localhost:5000/api/values) you will find that the API responds to your `GET` just fine.
+
+Congratulations, you're now a .NET Developer!
+
+In fact, you're an _ASP.NET Core_ developer.
+ASP.NET Core is the cross-platform web application framework that runs on top of .NET Core.
+You can create server-side websites with client-side components with it (ASP.NET Core "MVC").
+In this Dojo however, we will focus on ASP.NET Core "Web API" instead, and use a simple handcrafted SPA to talk to it.
+
+**Recommended bonus**: if things are going smooth, we recommend spending about 5 minutes to explore the created project in your IDE.
+For example, open the `test.csproj` file in Jetbrains or Visual Studio, or the project folder in VSCode.
+See what the CLI generated for you.
 
 ### Step 01 - Running the Dojo Code
 
