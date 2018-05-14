@@ -5,6 +5,7 @@ using InfiCoreDojo.Api.DTO;
 using InfiCoreDojo.DataAccess;
 using InfiCoreDojo.Domain;
 using Microsoft.AspNetCore.Mvc;
+using Serilog;
 
 namespace InfiCoreDojo.Api.Controllers
 {
@@ -24,6 +25,8 @@ namespace InfiCoreDojo.Api.Controllers
         [HttpGet("{name}")]
         public Player Get(string name)
         {
+            Log.Logger.Information("Asking for player {Name}", name);
+
             var player = playerDal.FindByName(name);
 
             if (player != null)
@@ -41,6 +44,8 @@ namespace InfiCoreDojo.Api.Controllers
         [HttpGet("{name}/current-level")]
         public Level GetCurrentLevel(string name)
         {
+            Log.Logger.Information("Retrieving current level for player {Name}", name);
+
             var player = Get(name);
             return levelDal.Get(player.CurrentLevelId);
         }
@@ -48,6 +53,8 @@ namespace InfiCoreDojo.Api.Controllers
         [HttpPost("choose")]
         public ApiCommandResult Choose([FromBody] Choice choice)
         {
+            Log.Logger.Information("Making player choice {@Choice}", choice);
+
             var player = playerDal.FindByName(choice.PlayerName);
 
             // TODO: Validate if the player *can* do this move...
@@ -67,6 +74,8 @@ namespace InfiCoreDojo.Api.Controllers
         [HttpPost("restart")]
         public ApiCommandResult Restart([FromBody] Reset reset)
         {
+            Log.Logger.Warning("Executing reset command {@Reset}", reset);
+
             // TODO: Implement this method
             //
             // Pseudocode:
