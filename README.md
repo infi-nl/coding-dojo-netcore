@@ -77,7 +77,41 @@ Although it should theoretically work, it's untested.
 
 ## The Guide
 
+### Step 00 - Exploring the dotnet CLI
+
 TODO
+
+### Step 01 - Running the Dojo Code
+
+TODO
+
+### Step 02 - Codebase Layout
+
+TODO
+
+### Step 03 - Managing NuGet Packages
+
+TODO
+
+### Step 04 - Changing the Controller
+
+TODO
+
+### Step 05 - Dependency Injection
+
+TODO
+
+### Step 06 - Unit Tests
+
+TODO
+
+### Step 07 - Wrapping Up
+
+TODO
+
+Of course, this is not the end of things.
+It's merely the beginning!
+Check out the next section for suggestions for next steps.
 
 ## Exercises for the Reader
 
