@@ -13,10 +13,9 @@ namespace InfiCoreDojo.Api.Controllers
     {
         private readonly ILevelDal levelDal;
 
-        // The need for this weird construtor becomes clear in later steps...
-        public LevelController(ILevelDal levelDal = null)
+        public LevelController(ILevelDal levelDal)
         {
-            this.levelDal = levelDal ?? new DataAccess.InMemory.InMemoryLevelDal();
+            this.levelDal = levelDal ?? throw new ArgumentNullException(nameof(levelDal));
         }
 
         [HttpGet("")]

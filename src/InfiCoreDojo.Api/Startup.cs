@@ -27,6 +27,10 @@ namespace InfiCoreDojo.Api
             services.AddMvc();
             services.AddRouting();
             services.AddSwaggerGen(c => { c.SwaggerDoc("v1", new Info { Title = "Infi Dojo API", Version = "v1" }); });
+
+            services.AddSingleton(InMemoryDatabase.Instance);
+            services.AddScoped<ILevelDal, InMemoryLevelDal>();
+            services.AddScoped<IPlayerDal, InMemoryPlayerDal>();
         }
 
         // Use this method to configure the HTTP request pipeline.

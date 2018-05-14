@@ -15,11 +15,10 @@ namespace InfiCoreDojo.Api.Controllers
         private readonly IPlayerDal playerDal;
         private readonly ILevelDal levelDal;
 
-        // The need for this weird construtor becomes clear in later steps...
-        public PlayerController(IPlayerDal playerDal = null, ILevelDal levelDal = null)
+        public PlayerController(IPlayerDal playerDal, ILevelDal levelDal)
         {
-            this.playerDal = playerDal ?? new DataAccess.InMemory.InMemoryPlayerDal();
-            this.levelDal = levelDal ?? new DataAccess.InMemory.InMemoryLevelDal();
+            this.playerDal = playerDal ?? throw new ArgumentNullException(nameof(playerDal));
+            this.levelDal = levelDal ?? throw new ArgumentNullException(nameof(levelDal));
         }
 
         [HttpGet("{name}")]

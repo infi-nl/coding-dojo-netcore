@@ -8,18 +8,21 @@ namespace InfiCoreDojo.DataAccess.InMemory
 {
     public class InMemoryLevelDal : ILevelDal
     {
-        public InMemoryLevelDal()
+        private readonly InMemoryDatabase _database;
+
+        public InMemoryLevelDal(InMemoryDatabase database)
         {
+            this._database = database;
         }
 
         public IQueryable<Level> Query()
         {
-            return InMemoryDatabase.Instance.Levels.AsQueryable();
+            return this._database.Levels.AsQueryable();
         }
 
         public Level Get(Guid id)
         {
-            return InMemoryDatabase.Instance.Levels.FirstOrDefault(i => i.Id == id)
+            return this._database.Levels.FirstOrDefault(i => i.Id == id)
                 ?? throw new KeyNotFoundException($"Level {id} does not exist");
         }
 
