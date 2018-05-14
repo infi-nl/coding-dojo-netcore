@@ -17,7 +17,9 @@ function DataAccessLayer(baseUrl) {
     };
 
     self.restart = function (userName) {
-        alert('Not implemented yet!');
+        return post("player/restart", {
+            "playerName": userName
+        });
     };
 
     self.getLevelOverview = function() {

@@ -76,12 +76,16 @@ namespace InfiCoreDojo.Api.Controllers
         {
             Log.Logger.Warning("Executing reset command {@Reset}", reset);
 
-            // TODO: Implement this method
-            //
-            // Pseudocode:
-            //
-            // - find player, handle not found result
-            // - set player's current level and save the player's state
+            var player = playerDal.FindByName(reset.PlayerName);
+
+            if (player == null)
+            {
+                return new ApiCommandResult { Success = false };
+            }
+
+            player.CurrentLevelId = GetStartingLevel().Id;
+
+            playerDal.Upsert(player);
 
             return new ApiCommandResult { Success = true };
         }
