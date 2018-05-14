@@ -255,7 +255,22 @@ Change your `Program.cs` in a way that both the `File` and `Console` sink are in
 
 ### Step 04 - Changing the Controller
 
-TODO
+This time we start from tag `step-04-start` (or wherever you left off last step).
+
+In this step you'll:
+
+1. Implement the `Restart(...)` method on `PlayerController`
+1. Connect the `dal.js` front-end method corresponding to the restart endpoint
+1. Verify that things are working by running and testing the application
+
+For this step, we'll just leave you to it!
+There are no further instructions for this step.
+Don't worry though if you still don't know what to do.
+Either ask for help, or have a peek at the diff between `step-04-start` and `step-05-start` to see how we did this step.
+
+**Recommended bonus**: Write a test or two for the logic you wrote in `Restart(...)`.
+Note that there are already some tests for the `PlayerController`.
+PS. This touches on some pretty tough and ugly Mocking issues, so feel free to skip this bonus objective.
 
 ### Step 05 - Dependency Injection
 
