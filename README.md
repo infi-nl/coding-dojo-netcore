@@ -168,7 +168,40 @@ Click a bit in the App and see that your IDE hits the break point.
 
 ### Step 02 - Codebase Layout
 
-TODO
+The starting point for this step is the same as for step 1.
+If you want to be completely fresh, reset your working copy and check out `step-02-start`.
+
+Let's investigate the codebase layout a bit.
+Here's the basic structure of our application:
+
+- The `InfiCoreDojo.Api` project contains the main project, and is also the "composition root". It contains:
+  - `Program.cs` for running/hosting the application (the ".NET Core" part)
+  - `Startup.cs` for bootstrapping the API bits (the "ASP.NET Core" part)
+  - Several `Controllers` corresponding to API endpoints
+  - A `wwwroot` containing the SPA as part of the API project (this could've also been hosted separately, but then we'd have CORS stuff to handle)
+- The `InfiCoreDojo.Api.Tests` project. Typically each .NET project has a sibling `.Tests` project for unit and/or integration tests.
+- The `InfiCoreDojo.DataAccess` project. For demo purposes we'll have different data stores in one project.
+- The `InfiCoreDojo.Domain` project with "entities".
+
+The architecture of this application isn't great.
+But remember: the point is to go on a Tour, not to design the perfect N-Tier Microservices Containerized Strangler Application Monolyth™.
+It showcases how you can have multiple projects that reference eachother.
+
+Now, to your exercise, for this step, try to:
+
+- Use your IDE's filter features to find all classes with "Player" in them;
+- Start by navigating to the `PlayerController` class, find the _current_ controller
+- Use your IDE's "go to definition" feature to drill down to the `IPlayerDal` interface
+- Use your IDE's "find implementations" feature to navigate to the (only current) implementation of that interface
+- Investigate that Player DAL, drill down to the `Player` class and check that one out too
+
+This step is complete when you've got a feeling you're comfortable navigating the solution.
+Being able to find stuff will be instrumental for the next steps.
+
+Congratulations, you're now an _expert_ with your IDE!
+
+**Recommended bonus**: if you have some spare time (because you are _that_ awesome!) then consider investigating the `wwwroot` contents, skimming through the JavaScript a bit.
+In addition, you could check out the properties of projects, most notably the API project.
 
 ### Step 03 - Managing NuGet Packages
 
