@@ -115,7 +115,22 @@ Check out the next section for suggestions for next steps.
 
 ## Exercises for the Reader
 
-TODO
+So, you've come this far, and you want more?
+Here's a recommended set of things to follow up with.
+
+- [EF Core on ASP.NET Core](https://docs.microsoft.com/en-us/ef/core/get-started/aspnetcore/) is about using Microsoft's ORM "Entity Framework" to access your RDBMs (tip: consider using the [mssql-server-linux](https://hub.docker.com/r/microsoft/mssql-server-linux/) Docker images);
+- [ASP.NET Core MVC](https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app/) rush through the tutorial to create an MVC application;
+- [Dockerization](https://docs.microsoft.com/en-us/dotnet/core/docker/intro-net-docker) running .NET Core applications in Docker containers;
+- [C# Language Tour](https://docs.microsoft.com/en-us/dotnet/csharp/tour-of-csharp/index) if you want to see a bit more about the main .NET language;
+- [SignalR](https://docs.microsoft.com/en-us/aspnet/core/signalr/get-started) for WebSockets communication between a browser client and ASP.NET Core application;
+- [Hosting and Deployment](https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy) for trying out hosting options for ASP.NET Core;
+- **Console Application**: try to create a console application that reads from stdin and writes to a file, and run it on your own OS as well as another (e.g. in a VM or interactive container)
+
+Perhaps all those options seem boring.
+Or you've already done all of them!?
+That probably means it's time to start building your first actual application with .NET.
+Or send some mean tweets or write an angry blog post about how stupid .NET Core is.
+All good to us, we just hope you learned a thing or two today ❤
 
 ## License
 
