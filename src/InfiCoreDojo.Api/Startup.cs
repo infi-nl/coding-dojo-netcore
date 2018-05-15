@@ -29,8 +29,19 @@ namespace InfiCoreDojo.Api
             services.AddRouting();
             services.AddSwaggerGen(c => { c.SwaggerDoc("v1", new Info { Title = "Infi Dojo API", Version = "v1" }); });
 
-            services.AddScoped<ILevelDal, JsonFileLevelDal>();
-            services.AddScoped<IPlayerDal, JsonFilePlayerDal>();
+            if (Configuration.GetValue<bool>("UseInMemoryData"))
+            {
+                // Option A: in-memory data, resets on reboot
+                services.AddSingleton<InMemoryDatabase>(InMemoryDatabase.Instance);
+                services.AddScoped<ILevelDal, InMemoryLevelDal>();
+                services.AddScoped<IPlayerDal, InMemoryPlayerDal>();
+            }
+            else
+            {
+                // Option B: json files based data, persists through reboot
+                services.AddScoped<ILevelDal, JsonFileLevelDal>();
+                services.AddScoped<IPlayerDal, JsonFilePlayerDal>();
+            }
         }
 
         // Use this method to configure the HTTP request pipeline.
