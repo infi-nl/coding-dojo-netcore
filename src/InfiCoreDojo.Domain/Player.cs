@@ -19,9 +19,13 @@ namespace InfiCoreDojo.Domain
 
         // Just an example "domain" method to make the entity a little less 
         // anemic, and at least a little interesting to unit test.
-        // (That is, when we get to the Dojo step where we improve this method.)
         public void MoveTo(Guid targetLevelId)
         {
+            if (this.CurrentLevelId == targetLevelId)
+            {
+                throw new InvalidOperationException("Cannot move to the level you're already in!");
+            }
+
             this.CurrentLevelId = targetLevelId;
         }
     }

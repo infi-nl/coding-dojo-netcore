@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InfiCoreDojo.Domain", "src\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InfiCoreDojo.Api", "src\InfiCoreDojo.Api\InfiCoreDojo.Api.csproj", "{282EFFBD-47C6-4544-B112-06C968E63C83}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InfiCoreDojo.Domain.Tests", "src\InfiCoreDojo.Domain.Tests\InfiCoreDojo.Domain.Tests.csproj", "{94E9F7AB-BB84-4C80-B0E5-1F54F910A093}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,10 +35,10 @@ Global
 		{282EFFBD-47C6-4544-B112-06C968E63C83}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{282EFFBD-47C6-4544-B112-06C968E63C83}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{282EFFBD-47C6-4544-B112-06C968E63C83}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8FF3245D-0D82-4C44-892C-0D54DA16ED28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8FF3245D-0D82-4C44-892C-0D54DA16ED28}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8FF3245D-0D82-4C44-892C-0D54DA16ED28}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8FF3245D-0D82-4C44-892C-0D54DA16ED28}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94E9F7AB-BB84-4C80-B0E5-1F54F910A093}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94E9F7AB-BB84-4C80-B0E5-1F54F910A093}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94E9F7AB-BB84-4C80-B0E5-1F54F910A093}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94E9F7AB-BB84-4C80-B0E5-1F54F910A093}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
