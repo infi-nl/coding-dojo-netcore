@@ -397,11 +397,85 @@ This will come in handy if you want to run builds on a CI server...
 
 ### Step 07 - Wrapping Up
 
-TODO
+Start this step from tag `step-07-start` or where you left off with step 6.
 
-Of course, this is not the end of things.
-It's merely the beginning!
-Check out the next section for suggestions for next steps.
+In this final step we'll put some things from previous steps together.
+We will add our own, _naive_ file-based mini-json-database to the DataAccess project.
+By now you should be pretty familiar with everything, so we're going to lay things out only in basic steps:
+
+1. Grab the `levels.json` and `players.json` files from the `/sample-data` folder from the root in the `master` branch
+1. Place them in the `DataAccess` folder in a subfolder called `Data` and **set them as "Embedded Resource"** (Google and _we_ are your friends!)
+1. Add the `Newtonsoft.Json` NuGet package to `DataAccess`
+1. Next add a `public class JsonFileLevelDal : ILevelDal { ... }` to `DataAccess`.
+
+Here's a skeleton for that class, you just have to implement the interface methods.
+Check the `InMemory...Dal` classes for examples, but don't forget to add `Save()` calls where needed.
+
+```csharp
+public class JsonFileLevelDal : ILevelDal
+{
+    private readonly string _fileName;
+    private readonly string _filePath;
+    private readonly List<Level> _data;
+
+    public JsonFileLevelDal()
+    {
+        _fileName = "levels.json";
+        _filePath = Path.Combine("c:/temp", _fileName); // Or maybe "/var/tmp/dojo" 
+
+        if (!File.Exists(_filePath))
+        {
+            SeedDatabaseFilesFromEmbeddedResources();
+        }
+
+        var json = File.ReadAllText(_filePath);
+        _data = JsonConvert.DeserializeObject<List<Level>>(json) ?? new List<Level>();
+    }
+
+    // TODO: Implement ILevelDal members
+
+    private void Save()
+    {
+        var json = JsonConvert.SerializeObject(_data);
+        File.WriteAllText(_filePath, json);
+    }
+
+    protected void SeedDatabaseFilesFromEmbeddedResources()
+    {
+        var assembly = this.GetType().Assembly;
+        var resourceName = "InfiCoreDojo.DataAccess.Data." + _fileName;
+
+        using (var stream = assembly.GetManifestResourceStream(resourceName))
+        using (var reader = new StreamReader(stream))
+        {
+            var json = reader.ReadToEnd();
+            File.WriteAllText(_filePath, json);
+        }
+    }
+}
+```
+
+Repeat the same process for a `public class JsonFilePlayerDal : IPlayerDal { ... }`.
+
+The only final thing to do here is to swap out implementations.
+Change the `Startup.cs` class and replace the `AddScoped<...>()` calls with these:
+
+```csharp
+services.AddScoped<ILevelDal, JsonFileLevelDal>();
+services.AddScoped<IPlayerDal, JsonFilePlayerDal>();
+```
+
+Now the DI container will supply different implementations for those interface, without needing to change the controllers.
+Sweet!
+
+Run your application, and **be sure to check the awesome story we've provided in those json files!**
+
+Congratulations, you now have a fully functional game!
+
+**Recommended bonus**: use inheritance and generics to DRY up the two new Dal classes.
+
+**Recommended bonus**: use a `Configuration.GetValue<bool>("UseInMemoryData")` call in an `if` statement to make the `Startup.cs` registrations conditional.
+The `UseInMemoryData` boolean can be saved in the `appsettings.json` file.
 
 ## Exercises for the Reader
 
