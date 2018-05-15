@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using InfiCoreDojo.DataAccess;
 using InfiCoreDojo.DataAccess.InMemory;
+using InfiCoreDojo.DataAccess.JsonFiles;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -28,9 +29,8 @@ namespace InfiCoreDojo.Api
             services.AddRouting();
             services.AddSwaggerGen(c => { c.SwaggerDoc("v1", new Info { Title = "Infi Dojo API", Version = "v1" }); });
 
-            services.AddSingleton(InMemoryDatabase.Instance);
-            services.AddScoped<ILevelDal, InMemoryLevelDal>();
-            services.AddScoped<IPlayerDal, InMemoryPlayerDal>();
+            services.AddScoped<ILevelDal, JsonFileLevelDal>();
+            services.AddScoped<IPlayerDal, JsonFilePlayerDal>();
         }
 
         // Use this method to configure the HTTP request pipeline.

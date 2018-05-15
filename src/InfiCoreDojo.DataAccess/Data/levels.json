@@ -1,0 +1,296 @@
+[
+  {
+    "Id": "00000000-0000-0000-0000-000000000000",
+    "IsStartingLevel": true,
+    "LevelName": "Beginning",
+    "Description": "Coming home from work, you stand before your door. You fish your keys out of your pocket and with the happy prospect of a night of Netflix & Chill, you open the door... and there stands a bloody great monster!",
+    "Answers": [
+      {
+        "Id": "11111111-1111-1111-1111-000000000000",
+        "Description": "Run!",
+        "TargetLevelId": "00000000-0000-0000-0000-000000000001"
+      },
+      {
+        "Id": "11111111-1111-1111-1111-000000000001",
+        "Description": "Stomp the monster on its nose",
+        "TargetLevelId": "00000000-0000-0000-0000-000000000002"
+      },
+      {
+        "Id": "11111111-1111-1111-1111-000000000002",
+        "Description": "Get dinner first",
+        "TargetLevelId": "00000000-0000-0000-0000-000000000003"
+      }
+    ]
+  },
+
+  {
+    "Id": "00000000-0000-0000-0000-000000000001",
+    "LevelName": "Run!",
+    "Description": "You turn around to run, but it has started to rain and you didn't bring an umbrella this morning. It seems like running is not an option. The monster yaps at you.",
+    "Answers": [
+      {
+        "Id": "11111111-1111-1111-1111-000000000001",
+        "Description": "Stomp the monster on its nose",
+        "TargetLevelId": "00000000-0000-0000-0000-000000000002"
+      },
+      {
+        "Id": "11111111-1111-1111-1111-000000000002",
+        "Description": "Get dinner first",
+        "TargetLevelId": "00000000-0000-0000-0000-000000000003"
+      }
+    ]
+  },
+
+  {
+    "Id": "00000000-0000-0000-0000-000000000002",
+    "LevelName": "Stomp the monster on its nose",
+    "Description": "It yelps in pain and starts to look really angry. Now that you think about it, it didn't really look angry before. It does now though, oh yes it does.",
+    "Answers": [
+      {
+        "Id": "11111111-1111-1111-1111-000000000003",
+        "Description": "Run!",
+        "TargetLevelId": "00000000-0000-0000-0000-000000000004"
+      },
+      {
+        "Id": "11111111-1111-1111-1111-000000000004",
+        "Description": "Stomp the monster on its nose, again",
+        "TargetLevelId": "00000000-0000-0000-0000-000000000005"
+      },
+      {
+        "Id": "11111111-1111-1111-1111-000000000005",
+        "Description": "Get dinner first",
+        "TargetLevelId": "00000000-0000-0000-0000-000000000006"
+      }
+    ]
+  },
+
+  {
+    "Id": "00000000-0000-0000-0000-000000000003",
+    "LevelName": "Get dinner first",
+    "Description": "You walk past the monster through the hallway and into the kitchen, where on the table a scrumptious meal has been set out. Soups, salads, a giant bowl of hummus and a veritable <i>mountain</i> of sandwiches. Even a Hobbit would walk away with a pain in their stomach if they'd eat it all. <br/> For some reason you don't question how or why your table has been laden to breaking point, but just eat your fill. The food is absolutely delicious.",
+    "Answers": [
+      {
+        "Id": "11111111-1111-1111-1111-000000000006",
+        "Description": "Steal a knife from the table",
+        "TargetLevelId": "00000000-0000-0000-0000-000000000007"
+      },
+      {
+        "Id": "11111111-1111-1111-1111-000000000007",
+        "Description": "Wonder what's up with the monster",
+        "TargetLevelId": "00000000-0000-0000-0000-000000000008"
+      }
+    ]
+  },
+
+  {
+    "Id": "00000000-0000-0000-0000-000000000004",
+    "LevelName": "Run angry",
+    "Description": "It's raining and not just a little. Although you didn't bring an umbrella, you decide you'd rather get wet than eaten. You take a sprint down the street, the sound of heavy feet following you.",
+    "Answers": [
+      {
+        "Id": "11111111-1111-1111-1111-000000000008",
+        "Description": "Go left",
+        "TargetLevelId": "00000000-0000-0000-0000-000000000009"
+      },
+      {
+        "Id": "11111111-1111-1111-1111-000000000009",
+        "Description": "Straight on",
+        "TargetLevelId": "00000000-0000-0000-0000-00000000000a"
+      },
+      {
+        "Id": "11111111-1111-1111-1111-00000000000a",
+        "Description": "Go right",
+        "TargetLevelId": "00000000-0000-0000-0000-00000000000a"
+      }
+    ]
+  },
+
+  {
+    "Id": "00000000-0000-0000-0000-000000000005",
+    "LevelName": "Stomp the monster on its nose, again",
+    "Description": "Although it didn't really work as much to your advantage as you hoped the first time, you try hitting the monster's nose again. It seems to have learned from past experience, however, and dodges your move before biting you in your shoulder. <br /> With a cry of pain you slide down against the wall.",
+    "Answers": [
+      {
+        "Id": "11111111-1111-1111-1111-00000000000b",
+        "Description": "This is not going so well",
+        "TargetLevelId": "00000000-0000-0000-0000-00000000000b"
+      }
+    ]
+  },
+
+  {
+    "Id": "00000000-0000-0000-0000-000000000006",
+    "LevelName": "Dinner angry",
+    "Description": "You try to move past the monster into the hallway, but instead of cooperating, it bites you in your shoulder. With a cry of pain you slide down against the wall. ",
+    "Answers": [
+      {
+        "Id": "11111111-1111-1111-1111-00000000000b",
+        "Description": "This is not going so well",
+        "TargetLevelId": "00000000-0000-0000-0000-00000000000b"
+      }
+    ]
+  },
+
+  {
+    "Id": "00000000-0000-0000-0000-000000000007",
+    "LevelName": "Knife",
+    "Description": "You steal a knife from the table. Steal indeed, because you are sure it isn't one of <i>your</i> knives: this one's really nice and hefty – is that <i>silver</i>? <br /> You turn around and...",
+    "Answers": [
+      {
+        "Id": "11111111-1111-1111-1111-00000000000c",
+        "Description": "...stab the monster",
+        "TargetLevelId": "00000000-0000-0000-0000-00000000000c"
+      },
+      {
+        "Id": "11111111-1111-1111-1111-00000000000d",
+        "Description": "...throw the knife at the monster",
+        "TargetLevelId": "00000000-0000-0000-0000-00000000000d"
+      }
+    ]
+  },
+
+  {
+    "Id": "00000000-0000-0000-0000-000000000008",
+    "LevelName": "Wonder what's up with the monster",
+    "Description": "Now that your belly is full, you realise that it is in fact quite strange that your table has been set. Did… did the monster do that? <br /> You turn around and look at the monster, which has followed you and is waiting in the kitchen doorway, a curious look on its face.",
+    "Answers": [
+      {
+        "Id": "11111111-1111-1111-1111-00000000000e",
+        "Description": "Hey",
+        "TargetLevelId": "00000000-0000-0000-0000-00000000000e"
+      },
+      {
+        "Id": "11111111-1111-1111-1111-00000000000f",
+        "Description": "Uhm...?",
+        "TargetLevelId": "00000000-0000-0000-0000-00000000000e"
+      },
+      {
+        "Id": "11111111-1111-1111-1111-000000000010",
+        "Description": "Hello there!",
+        "TargetLevelId": "00000000-0000-0000-0000-00000000000e"
+      }
+    ]
+  },
+
+  {
+    "Id": "00000000-0000-0000-0000-000000000009",
+    "LevelName": "Alleyway",
+    "Description": "You dive into a dark alleyway. You land, not quite comfortably, on a pile of garbage. A rubbish bin topples over and buries you under more unsavoury bits. <br /> Moments later, the monster peeks in, sniffs and walks away in disgust.",
+    "Answers": [
+      {
+        "Id": "11111111-1111-1111-1111-000000000011",
+        "Description": "It seems you are safe for now",
+        "TargetLevelId": "00000000-0000-0000-0000-00000000000f"
+      }
+    ]
+  },
+
+  {
+    "Id": "00000000-0000-0000-0000-00000000000a",
+    "LevelName": "Straight on",
+    "Description": "You are really legging it. Never before did you run so fast. But however much you suprised the monster by running, you fear it is closing in.",
+    "Answers": [
+      {
+        "Id": "11111111-1111-1111-1111-000000000012",
+        "Description": "Up it another notch",
+        "TargetLevelId": "00000000-0000-0000-0000-000000000010"
+      }
+    ]
+  },
+
+  {
+    "Id": "00000000-0000-0000-0000-00000000000b",
+    "LevelName": "Lose",
+    "Description": "In no time at all the monster is on top of you and is eating you whole. This has definitely not been your best day.",
+    "Answers": [
+      {
+        "Id": "11111111-1111-1111-1111-000000000013",
+        "Description": "Try again",
+        "TargetLevelId": "00000000-0000-0000-0000-000000000000"
+      }
+    ]
+  },
+
+  {
+    "Id": "00000000-0000-0000-0000-00000000000c",
+    "LevelName": "Stab",
+    "Description": "You turn around quickly and take a stab at the monster, which has followed you to the kitchen and is waiting in the doorway. <br /> You manage to inflict a minor wound. For a moment the monster looks sad, then it growls and jumps towards you.",
+    "Answers": [
+      {
+        "Id": "11111111-1111-1111-1111-000000000014",
+        "Description": "Oh no",
+        "TargetLevelId": "00000000-0000-0000-0000-00000000000b"
+      }
+    ]
+  },
+
+  {
+    "Id": "00000000-0000-0000-0000-00000000000d",
+    "LevelName": "Throw",
+    "Description": "You turn around and attempt to throw the knife at the monster. The knife flips over and over in the air, but unfortunately you never joined the circus and are an absolutely abhorrent knife thrower, so it hits the monster butt-first and bounces harmlessly off its heavy fur. <br /> You see a look of disappointment in its eyes, before it turns to you...",
+    "Answers": [
+      {
+        "Id": "11111111-1111-1111-1111-000000000014",
+        "Description": "Oh no",
+        "TargetLevelId": "00000000-0000-0000-0000-00000000000b"
+      }
+    ]
+  },
+
+  {
+    "Id": "00000000-0000-0000-0000-00000000000e",
+    "LevelName": "Talk to the monster",
+    "Description": "The monster seems delighted that you enjoyed your meal – can monsters smile? This one certainly seems to. <br /> Unfortunately it cannot speak, but it appreciates your attempt to communicate vocally. It slowly walks towards you and licks your face before starting to purr in a growly, monstery way.",
+    "Answers": [
+      {
+        "Id": "11111111-1111-1111-1111-000000000015",
+        "Description": "Okay?",
+        "TargetLevelId": "00000000-0000-0000-0000-000000000011"
+      },
+      {
+        "Id": "11111111-1111-1111-1111-000000000016",
+        "Description": "Pet it",
+        "TargetLevelId": "00000000-0000-0000-0000-000000000011"
+      }
+    ]
+  },
+
+  {
+    "Id": "00000000-0000-0000-0000-00000000000f",
+    "LevelName": "Draw",
+    "Description": "Today appears to be your lucky day. Well, for certain definitions of luck anyway. <br /> You slowly walk home. Once there, you see an amazing dinner has been set out on the kitchen table. You have no idea how it got there, but it's there and you are hungry. It is absolutely delicious. <br /> After dinner, you curl up on the couch alone and turn on Netflix. A sweep of loneliness washes over you. <br /> You wonder… did you win or lose today?",
+    "Answers": [
+      {
+        "Id": "11111111-1111-1111-1111-000000000017",
+        "Description": "Go for another bout",
+        "TargetLevelId": "00000000-0000-0000-0000-000000000000"
+      }
+    ]
+  },
+
+  {
+    "Id": "00000000-0000-0000-0000-000000000010",
+    "LevelName": "Up it another notch",
+    "Description": "You don't exactly know how you manage it, but you start running *even faster*. It's probably the effect of having a monster chasing you. How far behind is it? You dare to glance behind you and see to your relief that you're getting farther away from the monster. <br /> What you don't see, however, is a banana peel. You slip and fall…",
+    "Answers": [
+      {
+        "Id": "11111111-1111-1111-1111-000000000014",
+        "Description": "Oh no",
+        "TargetLevelId": "00000000-0000-0000-0000-00000000000b"
+      }
+    ]
+  },
+
+  {
+    "Id": "00000000-0000-0000-0000-000000000011",
+    "LevelName": "Pet it",
+    "Description": "You reach out slowly and pet the monster on its ugly head. Suddenly, it doesn't sound so ugly anymore as it starts to butt its head against your shoulder making crooning noises. <br /> You won't be alone for your night of Netflix & Chill... <br /> It doesn't take long before the two of you are best friends, not hindered in the slightest by the monsters ability to provide plentiful meals.",
+    "Answers": [
+      {
+        "Id": "11111111-1111-1111-1111-000000000017",
+        "Description": "Go for another bout",
+        "TargetLevelId": "00000000-0000-0000-0000-000000000000"
+      }
+    ]
+  }
+]
