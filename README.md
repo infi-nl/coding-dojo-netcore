@@ -337,7 +337,63 @@ Surely you have enough info now to do this task?
 
 ### Step 06 - Unit Tests
 
-TODO
+Start this step from tag `step-06-start` or where you left off with step 5.
+
+There are some unit tests in the current codebase already.
+Some were there from the start, some you might've created for the bonus of previous steps.
+Either way, try to find your IDE's Test Runner, and see if you can run the current set of tests.
+All of them are located in `InfiCoreDojo.Api.Tests`.
+Methods marked with a `[Fact]` attribute are xUnit tests.
+
+If you have trouble running the tests, please look for help to get things up and running.
+You'll need it for the rest of this step.
+
+Next up we'll add a new project `InfiCoreDojo.Domain.Tests`.
+Try to make it a "Class Library (.NET Standard)" project (the "xUnit Test Project" is also an option, but skips the interesting bits we want to do manually this time).
+You have several ways to do this, pick your favorite:
+
+- Your IDE will likely have an Add "New Project.." option
+- The CLI has a [`dotnet new ...`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-new?tabs=netcore2x) option for new projects
+- Copy the `InfiCoreDojo.Api.Tests` project files and edit them manually
+
+After doing this, try to recall the step about NuGet.
+You will need these for your new project:
+
+- [xunit](https://www.nuget.org/packages/xUnit)
+- [xunit.runner.visualstudio](https://www.nuget.org/packages/xUnit.Runner.VisualStudio)
+
+Create a class (or rename `Class1` if it was generated) called `PlayerTests`.
+Add this to your class:
+
+```csharp
+[Fact]
+public void Tests_are_working()
+{
+    Assert.True(9001 > 42);
+}
+```
+
+And run the tests in your IDE to see this one light up green!
+
+Next up, find the "Dependencies" section in your project.
+In VSCode this might mean editing the `.csproj` file directly.
+Create a reference to the `InfiCoreDojo.Domain` project.
+This is required for the _test_ project to use types from the actual `Domain` project.
+
+Now find `Player.cs` and its `MoveTo(...)` method.
+We would like to improve that method, by `throw`ing an `InvalidOperationException` if a player tries to move to the level they're currently in.
+Try to do some proper TDD if you still have the energy.
+
+1. Write a `[Fact]` in the new project to `Assert.Throws<InvalidOperationException>(...)`.
+1. Run the test and see that it's red.
+1. Fix the `MoveTo(...)` method to make it green.
+1. ...
+1. Profit!
+
+Congratulations, you are now a _project manager_!
+
+**Recommended bonus**: see if you can use the `dotnet` CLI to run the tests too.
+This will come in handy if you want to run builds on a CI server...
 
 ### Step 07 - Wrapping Up
 
