@@ -163,7 +163,7 @@ It's a light-purple site with "WELCOME" in big friendly letters.
 Like this:
 
 ![Welcome Screen](media/screenshot-home.png "Light-purple welcome screen")
-n
+
 Congratulations, you're up and running!
 
 **Recommended bonus**: check out the application's current state, click through the GUI, check out the app.
