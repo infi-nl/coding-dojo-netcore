@@ -426,7 +426,7 @@ public class JsonFileLevelDal : ILevelDal
     public JsonFileLevelDal()
     {
         _fileName = "levels.json";
-        _filePath = Path.Combine("c:/temp", _fileName); // Or maybe "/var/tmp/dojo" 
+        _filePath = Path.Combine(Path.GetTempPath(), _fileName);
 
         if (!File.Exists(_filePath))
         {
