@@ -137,6 +137,8 @@ In this Dojo however, we will focus on ASP.NET Core "Web API" instead, and use a
 For example, open the `test.csproj` file in Jetbrains or Visual Studio, or the project folder in VSCode.
 See what the CLI generated for you.
 
+> ⚠ Don't forget to stop the `dotnet run` server, or else port `:5000` will be taken and break the next steps!
+
 ### Step 01 - Running the Dojo Code
 
 We're ready to dive in. Start with these steps:
@@ -157,8 +159,11 @@ Try to "Build" the solution, and then "Debug" or "Start with Debugger" option.
 Typically this is either the F5 key or some main menu option.
 
 Open `http://localhost:5000` if it hasn't opened automatically, and you should see the application's welcome screen.
-It's a light-purle site with "WELCOME" in big friendly letters.
+It's a light-purple site with "WELCOME" in big friendly letters.
+Like this:
 
+![Welcome Screen](media/screenshot-home.png "Light-purple welcome screen")
+n
 Congratulations, you're up and running!
 
 **Recommended bonus**: check out the application's current state, click through the GUI, check out the app.
@@ -290,7 +295,7 @@ So as a rule of thumb, these are a 'forbidden':
 
 Instead, your classes should ask for these "dependencies" in the constructor.
 Preferably you ask for them via an abstraction, typically an `interface`.
-The DI framework ("Container") will then provide specific implementations at it well pleases.
+The DI framework ("Container") will then provide specific implementations as it well pleases.
 For one, this allows you to swap out one implementation for the other, without changing the dependent class.
 
 Okay, enough theory.
@@ -468,7 +473,7 @@ services.AddScoped<IPlayerDal, JsonFilePlayerDal>();
 Now the DI container will supply different implementations for those interface, without needing to change the controllers.
 Sweet!
 
-Run your application, and **be sure to check the awesome story we've provided in those json files!**
+Run your application, and **be sure to check ❤ the awesome story ❤ we've provided in those json files!**
 
 Congratulations, you now have a fully functional game!
 
@@ -476,6 +481,8 @@ Congratulations, you now have a fully functional game!
 
 **Recommended bonus**: use a `Configuration.GetValue<bool>("UseInMemoryData")` call in an `if` statement to make the `Startup.cs` registrations conditional.
 The `UseInMemoryData` boolean can be saved in the `appsettings.json` file.
+
+> 🛈 If you want to see what _we_ made of things up until the end, you can do `git checkout ...` on the solution branch.
 
 ## Exercises for the Reader
 
