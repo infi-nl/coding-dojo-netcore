@@ -1,5 +1,9 @@
 # Infi '.NET Core ❤ OSX/Linux' Dojo
 
+----
+**⚠ Warning:** This repository is _frozen in time_, and getting no new (security) updates. It is left public, should it help and offer some guidance around its subjects to future visitors. However, for latest guidance on involved subjects, we recommend going to the official sources.
+----
+
 Welcome to this self-paced Coding Dojo about cross-platform .NET Core development.
 
 ## About the Dojo
